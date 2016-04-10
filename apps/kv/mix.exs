@@ -24,6 +24,7 @@ defmodule KV.Mixfile do
       [applications: [:logger],
       # The :mod option specifies the “application callback module”, 
       # followed by the arguments to be passed on application start. 
+       env: [routing_table: []],
        mod: {KV, []}]
     end
 

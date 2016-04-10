@@ -28,7 +28,8 @@ defmodule KV.Supervisor do
       # By default, the function start_link is invoked on the given module
       # in this case,
       # KV.Bucket.Supervisor.start_link
-      supervisor(KV.Bucket.Supervisor, [])
+      supervisor(KV.Bucket.Supervisor, []),
+      supervisor(Task.Supervisor, [[name: KV.RouterTasks]])
     ]
 
     # :one_for_one means that if a child dies, it will be the only one restarted. 
